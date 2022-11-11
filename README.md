@@ -1,7 +1,7 @@
 # LNL-IS
 This is the code for our submisssion "Learning with Noisy Labels over Imbalanced Subpopulations"
 
-![Setting](LNL$SP.jpg "Setting")
+![Setting](LNLSP.jpg "Setting")
 
 # To obtain the results in our paper, run
 

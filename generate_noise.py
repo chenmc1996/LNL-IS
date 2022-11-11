@@ -68,3 +68,8 @@ def celebA(r=0.2):
     metadata_df['Blond_Hair'][mask]=noise_label
 
     metadata_df.to_csv(os.path.join(dir,f'list_attr_celeba_{r}r.csv') ,index=False)
+
+waterbirds(0.25)
+waterbirds(0.3)
+waterbirds(0.35)
+waterbirds(0.4)

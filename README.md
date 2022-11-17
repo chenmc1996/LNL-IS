@@ -3,7 +3,8 @@ This is the code for our submisssion "Learning with Noisy Labels over Imbalanced
 
 ![Setting](LNLSP.jpg "Setting")
 
-# To obtain the results on Waterbirds or CelebA
+
+## To obtain the results on Waterbirds or CelebA
 
 You need first to download the public dataset Waterbirds in [here](https://nlp.stanford.edu/data/dro/waterbird_complete95_forest2water2.tar.gz) and CelebA [here](https://www.kaggle.com/jessicali9530/celeba-dataset).
 
@@ -35,8 +36,10 @@ or
 
 You can also obtain the results of ERM baseline or the improved DivideMix by changing the --labelconf lv into 'ERM' or 'ce', respectively.
 
+## To obtain the results on ANIMAIL-10N
 
-# Requirement
+
+## Requirement
 
     python==3.6.8
     scikit-learn==0.23.2

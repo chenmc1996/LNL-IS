@@ -16,7 +16,7 @@ from sklearn.mixture import GaussianMixture
 import dataloader_animal as dataloader
 
 parser = argparse.ArgumentParser(description='PyTorch CIFAR Training')
-parser.add_argument('--batch_size', default=64, type=int, help='train batchsize') 
+parser.add_argument('--batch_size', default=128, type=int, help='train batchsize') 
 parser.add_argument('--epochs', default=50000000, type=int, help='epochs') 
 parser.add_argument('--warm_up', default=15, type=int, help='warm epochs') 
 parser.add_argument('--lr', '--learning_rate', default=0.01, type=float, help='initial learning rate')
@@ -33,6 +33,7 @@ parser.add_argument('--pl_threshold', default=0.9, type=float, help='pl threshol
 parser.add_argument('--nl_threshold', default=0.1, type=float, help='nl threshold')
 parser.add_argument('--num_epochs', default=500, type=int)
 parser.add_argument('--r', default=0.5, type=float, help='noise ratio')
+parser.add_argument('--top', default=0.9, type=float)
 parser.add_argument('--id', default='')
 parser.add_argument('--seed', default=123)
 parser.add_argument('--gpuid', default=0, type=int)
@@ -73,7 +74,7 @@ class SoftCELoss(object):
 class SoftCELoss_topk(object):
     def __call__(self, outputs, targets):
         loss=-torch.sum(F.log_softmax(outputs, dim=1) * targets, dim=1)
-        vals, idx = loss.topk(int(0.80*loss.shape[0]))
+        vals, idx = loss.topk(int(args.top*loss.shape[0]))
         Lx = torch.mean(loss[idx])
         return Lx
 

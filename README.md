@@ -14,27 +14,27 @@ After putting it in, e.g., "../data/", you can generate the noise label using ge
 
 Then you can obtain the same results of our method in our paper by running
 
-    python3 train_waterbirds.py \
-        --pretrain \           # using pretrained model as initilization
+    python3 train_waterbirds.py  
+        --pretrain             # using pretrained model as initilization
         --labelconf lv         # how to obtain label confident, 'ERM' label confidence always 1, 'ce' cross-entropy-based label confidence etsimation, and lv ours
         --warm_up 5            # nums of warm up epochs
-        --r **                 # noise ratio
-        --subpopulation 95     # subpopulation rate 
-        --knn **               # k-nearest-neighbor
         --unshifted_val        # validation set has the same imbalance ratio
+        --subpopulation 95     # subpopulation rate 
+        --r **                 # noise ratio
+        --knn **               # k-nearest-neighbor
         --top **               # $\tau$ 
         --root_dir **          # dataset path
 or
 
-    python3 train_celebA.py \
-        --labelconf lv \       # how to obtain label confident, 'ERM' label confidence always 1, 'ce' cross-entropy-based label confidence etsimation, and lv ours
-        --warm_up 5   \        # nums of warm up epochs
-        --r **  \              # noise ratio
+    python3 train_celebA.py  
+        --labelconf lv         #  label confidence, 'ERM' label confidence always 1, 'ce' cross-entropy-based label confidence etsimation, and lv ours
+        --warm_up 5            # nums of warm up epochs
+        --r **                 # noise ratio
         --knn **               # k-nearest-neighbor
-        --top ** \             # $\tau$
+        --top **               # $\tau$
         --root_dir **          # dataset path
 
-You can also obtain the results of ERM baseline or the improved DivideMix by changing the --labelconf lv into 'ERM' or 'ce', respectively.
+You can also obtain the results of ERM baseline or the improved DivideMix by changing the --labelconf lv into 'ERM' or 'ce', respectively. 
 
 ## To obtain the results on ANIMAIL-10N
 
@@ -42,10 +42,10 @@ You first need to download the public dataset ANIMAIL-10N in [here](https://dm.k
 Facing a real-world noisy dataset, we don't need to preprocess the label information.
 Just run
 
-    python3 train_animal.py \
-        --warm_up 15   \       # nums of warm up epochs
+    python3 train_animal.py  
+        --warm_up 15           # nums of warm up epochs
         --knn 5000             # k-nearest-neighbor
-        --top 0.9 \            # $\tau$
+        --top 0.9              # $\tau$
         --root_dir **          # dataset path
 
 
